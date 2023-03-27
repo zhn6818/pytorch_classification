@@ -16,7 +16,6 @@ import sys
 sys.path.append("..") 
 import cfg
 
-from data import get_random_eraser
 
 
 input_size = cfg.INPUT_SIZE

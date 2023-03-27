@@ -4,7 +4,7 @@
 # @author :lxztju
 # @github : https://github.com/lxztju
 import os
-home = os.path.expanduser('~')
+home = '/data1/zhn'
 ##数据集的类别
 NUM_CLASSES = 206
 
@@ -28,7 +28,7 @@ LR = 1e-3
 
 
 # 采用的模型名称
-model_name = 'resnext101_32x32d'
+model_name = 'resnet50'
 
 from models import Resnet50, Resnet101, Resnext101_32x8d,Resnext101_32x16d, Densenet121, Densenet169, Mobilenetv2, Efficientnet, Resnext101_32x32d, Resnext101_32x48d
 MODEL_NAMES = {
@@ -46,7 +46,7 @@ MODEL_NAMES = {
 }
 
 
-BASE = home + '/data/'
+BASE = '/data1/zhn' + '/data1/'
 
 
 # 训练好模型的保存位置
@@ -59,7 +59,7 @@ TEST_LABEL_DIR = BASE + 'test.txt'
 
 
 ##训练完成，权重文件的保存路径,默认保存在trained_model下
-TRAINED_MODEL = BASE + 'weights/resnext101_32x32d/epoch_40.pth'
+TRAINED_MODEL = BASE + 'weights/Resnet50/epoch_50.pth'
 
 
 

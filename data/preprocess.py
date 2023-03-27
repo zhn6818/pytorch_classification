@@ -4,7 +4,9 @@ import glob
 
 
 import sys 
-sys.path.append("..") 
+# print("~~~~~~~~~~~",sys.path, "~~~~~~~~~~~")
+sys.path.append("/data1/zhn/2022/pytorch_classification") 
+# print("!!!!!!!!!!!!!!!!!",sys.path, "~~~~~~~~~~~")
 import cfg
 import random
 
@@ -13,12 +15,12 @@ import random
 if __name__ == '__main__':
     traindata_path = cfg.BASE + 'train'
     labels = os.listdir(traindata_path)
-    valdata_path = cfg.BASE + 'test'
+    valdata_path = cfg.BASE + 'val'
     ##写train.txt文件
     txtpath = cfg.BASE
     # print(labels)
     for index, label in enumerate(labels):
-        imglist = glob.glob(os.path.join(traindata_path,label, '*.png'))
+        imglist = glob.glob(os.path.join(traindata_path,label, '*.jpg'))
         # print(imglist)
         random.shuffle(imglist)
         print(len(imglist))

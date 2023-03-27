@@ -20,6 +20,7 @@ save_folder = cfg.SAVE_FOLDER + cfg.model_name
 os.makedirs(save_folder, exist_ok=True)
 
 
+
 def load_checkpoint(filepath):
     checkpoint = torch.load(filepath)
     model = checkpoint['model']  # 提取网络结构

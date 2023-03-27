@@ -65,5 +65,5 @@ if __name__ == '__main__':
     num_classes = 2
     is_pretrained = False
 
-    clsmodel = ClsModel(model_name, num_classes, 0, is_pretrained)
+    clsmodel = ClsModel(model_name, num_classes, is_pretrained)
     print(clsmodel)

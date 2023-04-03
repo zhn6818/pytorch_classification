@@ -1,5 +1,6 @@
 import os
 import glob
+import numpy
 
 
 
@@ -19,24 +20,26 @@ if __name__ == '__main__':
     ##写train.txt文件
     txtpath = cfg.BASE
     # print(labels)
+    imglist = []
     for index, label in enumerate(labels):
-        imglist = glob.glob(os.path.join(traindata_path,label, '*.jpg'))
+        imgli = glob.glob(os.path.join(traindata_path,label, '*.jpg'))
+        imglist.extend(imgli)
         # print(imglist)
-        random.shuffle(imglist)
-        print(len(imglist))
-        trainlist = imglist[:int(0.8*len(imglist))]
-        vallist = imglist[(int(0.8*len(imglist))+1):]
-        with open(txtpath + 'train.txt', 'a')as f:
-            for img in trainlist:
-                # print(img + ' ' + str(index))
-                f.write(img + ' ' + str(index))
-                f.write('\n')
+    numpy.random.shuffle(imglist)
+    print(len(imglist))
+    trainlist = imglist[:int(0.8*len(imglist))]
+    vallist = imglist[(int(0.8*len(imglist))+1):]
+    with open(txtpath + 'train.txt', 'a')as f:
+        for img in trainlist:
+            # print(img + ' ' + str(index))
+            f.write(img + ' ' + str(labels.index(img.split('/')[-2])))
+            f.write('\n')
 
-        with open(txtpath + 'val.txt', 'a')as f:
-            for img in vallist:
-                # print(img + ' ' + str(index))
-                f.write(img + ' ' + str(index))
-                f.write('\n')
+    with open(txtpath + 'val.txt', 'a')as f:
+        for img in vallist:
+            # print(img + ' ' + str(index))
+            f.write(img + ' ' + str(labels.index(img.split('/')[-2])))
+            f.write('\n')
 
 
     imglist = glob.glob(os.path.join(valdata_path, '*.jpg'))

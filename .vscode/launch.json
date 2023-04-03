@@ -11,6 +11,22 @@
             "program": "train.py",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Python: train_val",
+            "type": "python",
+            "request": "launch",
+            "program": "train_val.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: predict",
+            "type": "python",
+            "request": "launch",
+            "program": "predict.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

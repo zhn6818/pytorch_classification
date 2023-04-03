@@ -28,7 +28,7 @@ LR = 1e-3
 
 
 # 采用的模型名称
-model_name = 'resnet50'
+model_name = 'resnext101_32x32d'
 
 from models import Resnet50, Resnet101, Resnext101_32x8d,Resnext101_32x16d, Densenet121, Densenet169, Mobilenetv2, Efficientnet, Resnext101_32x32d, Resnext101_32x48d
 MODEL_NAMES = {
@@ -59,7 +59,7 @@ TEST_LABEL_DIR = BASE + 'test.txt'
 
 
 ##训练完成，权重文件的保存路径,默认保存在trained_model下
-TRAINED_MODEL = BASE + 'weights/Resnet50/epoch_50.pth'
+TRAINED_MODEL = BASE + 'weights/resnext101_32x32d/epoch_5.pth'
 
 
 

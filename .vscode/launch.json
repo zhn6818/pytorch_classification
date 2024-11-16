@@ -10,6 +10,47 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Python train",
+            "type": "debugpy",
+            "request": "launch",
+            "env": {
+                "MODEL_NAME": "resnet18",
+                "LR": "0.01",
+                "EPOCHS": "70",
+                "BATCH_SIZE": "128",
+                "NUM_CLASSES": "2",
+                "IS_PRETRAINED": "True",
+                "OUTPUT_PATH": "./output",
+                // "TIME": "$(date "+%Y-%m-%d-%H-%M-%S")",
+                // "TIME": "your_time_variable", // 替换为需要的时间变量
+                "TRAIN_LIST": "/Volumes/data/data/dogs-vs-cats/train.txt",
+                "VAL_LIST": "/Volumes/data/data/dogs-vs-cats/val.txt" // 需要确认路径和文件名是否正确
+            },
+            "args": [
+                "--model_name",
+                "resnet18",
+                "--lr",
+                "0.01",
+                "--epochs",
+                "70",
+                "--batch-size",
+                "32",
+                "-j",
+                "4",
+                "--output",
+                "./output",
+                "--train_list",
+                "/Volumes/data/data/dogs-vs-cats/train.txt",
+                "--val_list",
+                "/Volumes/data/data/dogs-vs-cats/train.txt",
+                "--num_classes",
+                "2",
+                "--is_pretrained"
+            ],
+            "program": "tools/train.py",
+            "console": "integratedTerminal"
         }
     ]
 }

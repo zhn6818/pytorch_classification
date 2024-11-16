@@ -29,9 +29,10 @@ class  ClsDataset(Dataset):
     def _parser_input_data(self):
         assert os.path.exists(self.list_file)
         
-        lines = [x.strip().split('\t') for x in open(self.list_file, encoding='utf-8')]
+        lines = [x.strip().split(' ') for x in open(self.list_file, encoding='utf-8')]
         
         self.imgs_list = [ImageInfo(line) for line in lines]
+        # print("")
         
         
 
